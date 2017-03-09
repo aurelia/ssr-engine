@@ -1,0 +1,4 @@
+{
+  "name": "aurelia-ssr-engine",
+  "main": "dist/aurelia-ssr-engine.d.ts"
+}

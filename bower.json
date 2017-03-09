@@ -1,0 +1,32 @@
+{
+    "name": "aurelia-ssr-engine",
+    "version": "0.0.0",
+    "description": "The server-side rendering engine for Aurelia.",
+    "keywords": [
+      "aurelia",
+      "server",
+      "spa"
+    ],
+  "homepage": "http://aurelia.io",
+  "main": "dist/commonjs/aurelia-ssr-engine.js",
+  "moduleType": "node",
+  "license": "MIT",
+  "authors": [
+    "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/aurelia/ssr-engine"
+  },
+  "dependencies": {
+    "aurelia-binding": "^1.0.0",
+    "aurelia-dependency-injection": "^1.0.0",
+    "aurelia-loader": "^1.0.0",
+    "aurelia-logging": "^1.0.0",
+    "aurelia-metadata": "^1.0.0",
+    "aurelia-pal": "^1.0.0",
+    "aurelia-path": "^1.0.0",
+    "aurelia-task-queue": "^1.0.0",
+    "aurelia-templating": "^1.0.0"
+  }
+}
