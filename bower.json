@@ -1,12 +1,12 @@
 {
-    "name": "aurelia-ssr-engine",
-    "version": "0.0.0",
-    "description": "The server-side rendering engine for Aurelia.",
-    "keywords": [
-      "aurelia",
-      "server",
-      "spa"
-    ],
+  "name": "aurelia-ssr-engine",
+  "version": "0.0.0",
+  "description": "The server-side rendering engine for Aurelia.",
+  "keywords": [
+    "aurelia",
+    "server",
+    "spa"
+  ],
   "homepage": "http://aurelia.io",
   "main": "dist/commonjs/aurelia-ssr-engine.js",
   "moduleType": "node",
