@@ -14,39 +14,43 @@ globalize();
 console.debug = console.log;
 
 export class SSREngine {
-  constructor () {
+  constructor (configuration) {
     this.aurelia = new Aurelia(new NodeJsLoader());
 
     // set the root directory where the aurelia loader will resolve to
     // this is the 'src' dir in case of skeleton
 
     // TODO: This needs to be a paremeter.
-    Options.relativeToDir = path.resolve(__dirname, '..', 'src');
+    Options.relativeToDir = configuration.relativeToDir;
   }
 
   /**
    * This maybe should take a module or module path as an argument,
    * which would make sense.
    */
-  render (module) {
-    document.location.hash = request.url;
+  render (renderConfig) {
+    document.location.hash = renderConfig.url;
+    document.write(renderConfig.htmlPage);
 
     // TODO: this must be configurable. Host may not always be document.body.
-    this.aurelia.host = document.body;
+    this.aurelia.host = document.querySelector('[aurelia-app]');
 
     // TODO: This must be configurable. This may not always be 'main'. This should in fact be
     //       the value of the `aurelia-app attribute.
-    aurelia.configModuleId = 'main';
+    this.aurelia.configModuleId = this.aurelia.host.getAttribute('aurelia-app') || 'main';
 
     // note: this assumes your configure method awaits or returns the value of aurelia.setRoot(...)
     // skeletons currently don't do that so you need to adjust
-    // TODO: Instead of creating the attribute, we should find it in the DOM of the fragment
-    //       that we load and get the value from there.
+
+    console.log(require.main);
+
+    let module = require.main.require('../src/' + this.aurelia.configModuleId + '.ts');
+
     module.configure(this.aurelia)
       .then(() => {
-        const attribute = document.createAttribute('aurelia-app');
-        attribute.value = 'main';
-        document.body.attributes.setNamedItem(attribute);
+        // const attribute = document.createAttribute('aurelia-app');
+        // attribute.value = 'main';
+        // document.body.attributes.setNamedItem(attribute);
         const renderedHtml = 
           `<!DOCTYPE html>
           <html>
