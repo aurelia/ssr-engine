@@ -26,9 +26,9 @@ var paths = {
 };
 
 paths.files = [
-  'ssr-configuration.js',
-  'ssr-engine.js',
-  'plugin-node.js'
+  'aurelia.js',
+  'framework-configuration.js',
+  'index.js'
 ].map(function(file){
   return paths.root + file;
 });

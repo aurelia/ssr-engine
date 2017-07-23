@@ -1,4 +1,10 @@
 {
-  "name": "aurelia-ssr-engine",
-  "main": "dist/aurelia-ssr-engine.d.ts"
+  "name": "aurelia-dialog",
+  "main": "dist/commonjs/aurelia-dialog.d.ts",
+  "dependencies": {
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection",
+      "aurelia-metadata": "github:aurelia/metadata",
+      "aurelia-pal": "github:aurelia/pal",
+      "aurelia-templating": "github:aurelia/templating"    
+  }
 }
