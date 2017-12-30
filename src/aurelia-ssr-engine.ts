@@ -67,5 +67,7 @@ function start(options: AppInitializationOptions, requestUrl: string) {
 }
 
 export {
-  render
+  render,
+  AppInitializationOptions,
+  RenderOptions
 };
