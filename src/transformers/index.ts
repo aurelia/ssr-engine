@@ -5,8 +5,7 @@ const transformers = [
   require('./template').default,
   require('./title').default,
   require('./styles').default,
-  require('./preboot').default,
-  require('./minify').default
+  require('./preboot').default
 ];
 // tslint:enable:no-var-requires
 

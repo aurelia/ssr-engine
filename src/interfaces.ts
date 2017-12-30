@@ -38,17 +38,6 @@ export interface RenderOptions {
    * e.g. ['body']
    */
   appRoots?: string[];
-
-  /**
-   * Whether to minify the HTML or not
-   */
-  minifyHtml?: boolean;
-
-  /**
-   * Options of the html-minifier package which will be used
-   * to minify the HTML (if the minifyHtml property is set to true)
-   */
-  minifyOptions?: any;
 }
 
 export interface AppInitializationOptions {

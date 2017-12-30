@@ -53,13 +53,10 @@
     "aurelia-framework": "^1.0.0",
     "aurelia-pal": "^1.0.0",
     "aurelia-pal-nodejs": "^1.0.0-beta.1.0.0",
-    "aurelia-loader-webpack": "2.1.0",
-    "jsdom": "^11.1.0",
     "preboot": "^4.5.2"
   },
   "devDependencies": {
     "@types/jasmine": "2.5.47",
-    "@types/jsdom": "^11.0.1",
     "@types/node": "8.0.14",
     "concurrently": "^3.1.0",
     "conventional-changelog-cli": "^1.2.0",
@@ -67,7 +64,6 @@
     "cross-env": "^3.1.0",
     "del": "^2.2.1",
     "eslint": "^3.1.1",
-    "html-minifier": "^3.5.2",
     "jasmine-core": "^2.4.1",
     "merge2": "^1.0.2",
     "object.assign": "^4.0.4",
