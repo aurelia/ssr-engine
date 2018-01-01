@@ -14,7 +14,7 @@
   "license": "MIT",
   "author": "Rob Eisenberg <rob@bluespire.com> (http://robeisenberg.com/)",
   "main": "dist/commonjs/aurelia-ssr-engine.js",
-  "typings": "dist/aurelia-ssr-engine.d.ts",
+  "typings": "dist/commonjs/aurelia-ssr-engine.d.ts",
   "repository": {
     "type": "git",
     "url": "http://github.com/aurelia/ssr-engine"
