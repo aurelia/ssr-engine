@@ -1,6 +1,6 @@
 {
   "name": "aurelia-ssr-engine",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "The server-side rendering engine for Aurelia.",
   "keywords": [
     "aurelia",
