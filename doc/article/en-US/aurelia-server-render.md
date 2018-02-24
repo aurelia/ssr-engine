@@ -1,9 +1,9 @@
 ---
 name: "Server Side Rendering"
-description: Aurelia Server Side Rendering.
+description: An introduction to server-side rendering with Aurelia.
 author: Jeroen Vinke (jeroenvinke.nl)
 ---
-The Aurelia framework is a client-side JavaScript framework. One of the characteristics is that on page load, a bundle of JavaScript code is fetched and executed, starting the framework and the application. The server does not do much besides serving the client static files.
+The Aurelia framework is a client-side JavaScript framework. One of the characteristics is that on page load, a bundle of JavaScript code is fetched and executed, starting the framework and the application. The server does not do much other than serve the client static files.
 
 There are a few downsides to this. Since the HTML that's returned from the server does not contain any content (only a boilerplate HTML file that references JavaScript bundles), crawlers of search engines can't do their job effectively.
 
@@ -11,12 +11,12 @@ Another downside is the time it takes to load the application. First the browser
 
 A solution to these problems is Server Side Rendering (SSR), which the Aurelia framework supports. Read on to learn more.
 
-> Warning
-> Server Side Rendering is a new feature of the Aurelia framework. It is considered to be experimental.
+> Info
+> Server Side Rendering is a new feature of the Aurelia framework, intended for use by early adopters.
 
 ## What is Server Side Rendering?
 
-Server Side Rendering is a concept where the server gets more responsibilities, namely rendering the application on the server and sending the fully rendered page back to the client. By doing this the user will see a rendered page more quickly, before the bundles are loaded and the application has started client-side. Since the page that's returned by the server is fully rendered (the page content is already in the HTML), your site will end up higher in search engines.
+Server Side Rendering is a concept where the server gets more responsibilities, namely rendering the application on the server and sending the fully rendered page back to the client. By doing this the user will see a rendered page more quickly, before the bundles are loaded and the application has started client-side. Since the page that's returned by the server is fully rendered (the page content is already in the HTML), your site will receive a higher ranking by search engines.
 
 Server Side Rendering is only feasible because of something called isomorphism. An isomorphic framework allows you to run one application both on the client and the server. Aurelia is such a framework.
 
@@ -24,7 +24,7 @@ Server Side Rendering is only feasible because of something called isomorphism. 
 
 Even though Server Side Rendering can solve some problems of client side applications, there are some caveats that you should be aware of. The most important one is the fact that your application would run in two different environments: the browser and Node.js. This is possible mostly because of Aurelia's [Platform Abstraction Layer](https://github.com/aurelia/pal) which abstracts logic that is platform specific. It is important that you use these abstractions.
 
-Node.js is in some ways quite different from a browser environment. There is no (real) DOM, `window` or `document` global. Anything that depends on such globals (jQuery for example) will not work. To emulate the DOM a library called jsdom is used. The Platform Abstraction Layer that's used in the server environment uses jsdom so that basic DOM operations can be done. As long as you use the Platform Abstraction Layer to do any modification to the DOM you should be fine.
+Node.js is in some ways quite different from a browser environment. There is no (real) DOM, `window` or `document` global. Anything that depends on such globals (jQuery for example) will not work. To emulate the DOM, a library called jsdom is used. The Platform Abstraction Layer that's used in the server environment uses jsdom so that basic DOM operations can be done. As long as you use the Platform Abstraction Layer to do any modification to the DOM, you should be fine.
 
 Developing your application in a way so that it can be rendered both on the client and the server takes time and effort. Our recommendation is to only use Server Side Rendering if you can spend the time required to make your code work for both the client and server.
 
@@ -46,7 +46,7 @@ When a request hits the web server and the middleware kicks off the `aurelia-ssr
 
 When the client receives the HTML from the server, it can already render the entire page, so it is much quicker to render the initial content. After that initial render, the browser will fetch the client side bundles and start the Aurelia application on the client.
 
-There is a significant amount of time between the point where the browser has rendered the HTML it received from the server and the point where the browser has finished loading the bundles and starting the application. In this period of time the user can already click on buttons, write in textboxes and so forth, but there is no JavaScript to handle these events since the Aurelia application is not running yet.
+There is a significant amount of time between the point where the browser has rendered the HTML it received from the server and the point where the browser has finished loading the bundles and starting the application. In this period of time the user can already click on buttons, write in text inputs and so forth, but there is no JavaScript to handle these events since the Aurelia application is not running yet.
 
 This is where a library called `preboot` comes into play. Preboot captures all events that occur between the rendering of the server view and the rendering of the client view. As soon as the application is running on the client, `preboot` replays all events it has captured. This allows your application to handle the events like it would in a setup without Server Side Rendering. For example, when the user clicks on a button in the server view, the click event is registered and stored. After the application has started client-side the click event is replayed and the JavaScript is able to process the click event.
 
@@ -142,18 +142,18 @@ When using Server Side Rendering you will likely want to take care of requests f
         config.options.pushState = true;
         config.options.root = '/';
 
-    	// routes omitted
+    	  // routes omitted
         config.map([]);
 
         config.mapUnknownRoutes(PLATFORM.moduleName('not-found'));
 
         this.router = router;
-        }
+      }
     }
   </source-code>
 </code-listing>
 
-When a non existing route is requested by a user, the server will render the 404 page just like any other page.
+When a non-existing route is requested by a user, the server will render the 404 page just like any other page.
 
 ## Skeleton with SSR Pre-Configured
 
