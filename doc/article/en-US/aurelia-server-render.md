@@ -58,8 +58,8 @@ In order to use server side rendering it is necessary to write your code in a wa
 
 In a setup where there is no Server Side Rendering you could do the following without any issues:
 
-<code-listing heading="DOM manipulation in the browser">
-  <source-code lang="ES 2015/2016">
+<code-listing heading="DOM Manipulation in the Browser">
+  <source-code lang="JavaScript">
     export class MyPage {
       activate() {
         document.body.appendChild(document.createElement('div'));
@@ -70,8 +70,8 @@ In a setup where there is no Server Side Rendering you could do the following wi
 
 However, since there is no `document` global on the server, you need to use the PAL:
 
-<code-listing heading="DOM manipulation using SSR">
-  <source-code lang="ES 2015/2016">
+<code-listing heading="DOM Manipulation Using SSR">
+  <source-code lang="JavaScript">
     import {DOM} from 'aurelia-pal';
 
     export class MyPage {
@@ -101,7 +101,7 @@ While that configuration works when the application runs client-side, you might 
 To accomplish this you can create a `server-main.js` or `server-main.ts` as follows:
 
 <code-listing heading="Alternative Entry Point">
-  <source-code lang="ES 2015/2016">
+  <source-code lang="JavaScript">
     import { Aurelia } from 'aurelia-framework';
     import { PLATFORM } from 'aurelia-pal';
     import bootstrapper from './ssr-bootstrapper-webpack';
@@ -132,8 +132,8 @@ Then, in `webpack.server.config.js` you can configure the server bundle to use t
 
 When using Server Side Rendering you will likely want to take care of requests for non-existing routes. This can be done by mapping unknown routes to a 404 module:
 
-<code-listing heading="404 page in Aurelia">
-  <source-code lang="JSON">
+<code-listing heading="404 Page in Aurelia">
+  <source-code lang="JavaScript">
     export class App {
       router: Router;
 
