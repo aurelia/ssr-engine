@@ -157,6 +157,6 @@ When a non-existing route is requested by a user, the server will render the 404
 
 ## Skeleton with SSR Pre-Configured
 
-In order to make it easy for you to get started with Server Side Rendering we have put together a skeleton application that already has Server Side Rendering configured. If you have an existing Webpack application that's based on the latest webpack skeleton navigation, then you can follow the instructions in the chapter [Adding SSR to an existing Webpack Application](aurelia-doc://section/9/version/1.0.0).
+In order to make it easy for you to get started with Server Side Rendering we have put together a skeleton application that already has Server Side Rendering configured.
 
 The pre-configured SSR skeleton can be found [here](https://github.com/aurelia/skeleton-navigation). Follow the instructions in the README to get started.
