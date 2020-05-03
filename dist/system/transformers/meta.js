@@ -3,10 +3,10 @@ System.register(["./utils"], function (exports_1, context_1) {
     var utils_1;
     var __moduleName = context_1 && context_1.id;
     function default_1(html, transformerCtx, options) {
-        var headStyleTags = Array.prototype.slice.call(transformerCtx.document.head.querySelectorAll('style'));
-        // copy over any style tags
-        for (var i = 0; i < headStyleTags.length; i++) {
-            html = utils_1.appendToHead(html, headStyleTags[i].outerHTML);
+        var metaTags = Array.prototype.slice.call(transformerCtx.document.head.querySelectorAll('meta'));
+        // copy over any meta tags
+        for (var i = 0; i < metaTags.length; i++) {
+            html = utils_1.appendToHead(html, metaTags[i].outerHTML);
         }
         return html;
     }
