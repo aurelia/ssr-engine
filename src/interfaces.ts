@@ -29,6 +29,11 @@ export interface RenderOptions {
   replayDelay?: number;
 
   /**
+   * When using preboot, where can the preboot script be found
+   */
+  prebootScript?: string;
+
+  /**
    * Options that are passed to preboot
    */
   prebootOptions?: any;

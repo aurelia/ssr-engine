@@ -7,6 +7,9 @@ export default function(html: string, transformerCtx: TransformerContext, option
       if (options.replayDelay === undefined) {
         options.replayDelay = 10;
       }
+      if (options.prebootScript === undefined) {
+        options.prebootScript = "preboot_browser.js";
+      }
 
       // preboot catches all events that happens before Aurelia gets loaded client-side
       // so that they can be replayed afterwards
@@ -30,7 +33,7 @@ export default function(html: string, transformerCtx: TransformerContext, option
       html = appendToHead(html, `\r\n<script>${inlinePrebootCode}</script>\r\n`);
 
       // preboot_browser can replay events that were stored by the preboot code
-      const script = `\r\n<script src="preboot_browser.js"></script>
+      const script = `\r\n<script src="${options.prebootScript}"></script>
 <script>
 document.addEventListener('aurelia-started', function () {
   // Aurelia has started client-side
