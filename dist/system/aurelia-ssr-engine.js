@@ -1,5 +1,6 @@
 System.register(["./reflect", "./property-descriptor", "./transformers", "./cleanup"], function (exports_1, context_1) {
     "use strict";
+    var transformers_1, cleanup_1;
     var __moduleName = context_1 && context_1.id;
     function render(options, initOptions) {
         if (!options.url) {
@@ -50,7 +51,6 @@ System.register(["./reflect", "./property-descriptor", "./transformers", "./clea
         PLATFORM.jsdom.reconfigure({ url: requestUrl });
         return start();
     }
-    var transformers_1, cleanup_1;
     return {
         setters: [
             function (_1) {

@@ -4,6 +4,7 @@ define(["require", "exports"], function (require, exports) {
     // tslint:disable:no-var-requires
     var transformers = [
         require('./template').default,
+        require('./meta').default,
         require('./title').default,
         require('./styles').default,
         require('./preboot').default

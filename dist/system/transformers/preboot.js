@@ -1,5 +1,6 @@
 System.register(["preboot", "./utils"], function (exports_1, context_1) {
     "use strict";
+    var preboot, utils_1;
     var __moduleName = context_1 && context_1.id;
     function default_1(html, transformerCtx, options) {
         if (options.preboot) {
@@ -32,7 +33,6 @@ System.register(["preboot", "./utils"], function (exports_1, context_1) {
         return html;
     }
     exports_1("default", default_1);
-    var preboot, utils_1;
     return {
         setters: [
             function (preboot_1) {
