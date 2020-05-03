@@ -32,7 +32,7 @@ function render(options: RenderOptions, initOptions: AppInitializationOptions) {
 
     setInputDefaultValues(document.body as HTMLBodyElement);
 
-    const html = transform({ app: ctx.aurelia.host.outerHTML, document}, options);
+    const html = transform({ app: ctx.aurelia.host.innerHTML, document}, options);
 
     ctx.stop();
     cleanup(options);

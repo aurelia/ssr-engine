@@ -1,5 +1,6 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
+    var pop, push, reverse, shift, sort, splice, unshift;
     var __moduleName = context_1 && context_1.id;
     function cleanup(options) {
         // aurelia-binding's array observer overrides the prototype of Array
@@ -37,7 +38,6 @@ System.register([], function (exports_1, context_1) {
             }
         }
     }
-    var pop, push, reverse, shift, sort, splice, unshift;
     return {
         setters: [],
         execute: function () {
