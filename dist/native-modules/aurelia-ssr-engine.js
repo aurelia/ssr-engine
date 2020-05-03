@@ -24,7 +24,7 @@ function render(options, initOptions) {
         .then(function (ctx) {
         var document = ctx.pal.DOM.global.document;
         setInputDefaultValues(document.body);
-        var html = transform({ app: ctx.aurelia.host.outerHTML, document: document }, options);
+        var html = transform({ app: ctx.aurelia.host.innerHTML, document: document }, options);
         ctx.stop();
         cleanup(options);
         return html;
